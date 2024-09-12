@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Notenanalyse - Hallo!</title>
+
+        <!--
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+{% load static %}
+        <link rel="stylesheet" href="{% static '../static/colors.css' %}">
+        <link rel="stylesheet" href="{% static '../static/styles.css' %}"> -->
+    </head>
+    <body>
+        <!-- Navigation bar -->
+        <div class="header bg-header">
+            <div style="width: 100%; display: flex; align-items: center; justify-content: space-between">
+                <h1 class="text-header">Lager</h1>
+
+                <div>
+                    <a class="header-button" href="<!--{% url 'web:index' %}-->">Start</a>
+                    <a class="header-button" href="<!--{% url 'web:logout' %}-->">Abmelden</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page content -->
+        <div class="outer-page">
+            <div class="page">
+                {% block lager %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
