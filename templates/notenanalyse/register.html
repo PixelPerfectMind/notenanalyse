@@ -1,0 +1,9 @@
+{% extends 'account/base.html' %}
+
+{% block authForm %}
+    <form method="post" action="">
+    {% csrf_token %}
+        {{ R_Form.as_p }}
+    <button type="submit">Registrieren</button>
+    </form>
+{% endblock authForm %}
