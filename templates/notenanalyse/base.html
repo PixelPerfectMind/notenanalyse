@@ -4,33 +4,29 @@
         <meta charset="UTF-8">
         <title>Notenanalyse - Hallo!</title>
 
-        <!--
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
-{% load static %}
-        <link rel="stylesheet" href="{% static '../static/colors.css' %}">
-        <link rel="stylesheet" href="{% static '../static/styles.css' %}"> -->
+
+
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/page.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/colors/light.css' %}">
     </head>
     <body>
-        <!-- Navigation bar -->
-        <div class="header bg-header">
-            <div style="width: 100%; display: flex; align-items: center; justify-content: space-between">
-                <h1 class="text-header">Lager</h1>
+        <div class="container">
+          <ul class="nav bg-info navbar">
+            <li class="nav-item">
+              <a class="nav-link link-light" href="/">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-light" href="/members">MEMBERS</a>
+            </li>
+          </ul>
 
-                <div>
-                    <a class="header-button" href="<!--{% url 'web:index' %}-->">Start</a>
-                    <a class="header-button" href="<!--{% url 'web:logout' %}-->">Abmelden</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Page content -->
-        <div class="outer-page">
-            <div class="page">
-                {% block lager %}
-                {% endblock %}
-            </div>
+          {% block content %}
+          {% endblock %}
         </div>
     </body>
 </html>
