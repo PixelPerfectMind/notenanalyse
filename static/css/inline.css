@@ -1,0 +1,28 @@
+.w-full {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.mr-4 {
+    margin-right: .4rem;
+}
+
+.always-on-top {
+    top: 0;
+    position: fixed;
+}

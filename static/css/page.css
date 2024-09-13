@@ -1,4 +1,5 @@
 @import "colors/light.css";
+@import "./inline.css";
 
 @font-face {
     font-family: "Encode Sans", sans-serif;
@@ -31,4 +32,58 @@ h1 {
 .navbar {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
+    height: 72px;
+}
+
+.button {
+    background: var(--md-sys-color-on-tertiary-container);
+    color: var(--md-sys-color-tertiary-container);
+    text-decoration: none;
+    border: 2px solid var(--md-sys-color-tertiary-container);
+    padding: 4px 8px;
+    font-size: 24px;
+    opacity: .85;
+    scale: 1;
+    transition-duration: .2s;
+}
+
+.button:hover {
+    opacity: .5;
+    scale: 2;
+    color: var(--md-sys-color-tertiary-container);
+}
+
+.button:focus {
+    border: 2px solid transparent;
+    opacity: 1;
+    box-shadow: 0px 0px 0px 4px var(--md-sys-color-tertiary-container);
+}
+
+.outlined-button {
+    background: var(--md-sys-color-tertiary-container);;
+    color: var(--md-sys-color-on-tertiary-container);
+    text-decoration: none;
+    border: 2px solid var(--md-sys-color-on-tertiary-container);
+    padding: 4px 8px;
+    font-size: 24px;
+    opacity: .85;
+    scale: 1;
+    transition-duration: .2s;
+}
+
+.outlined-button:hover {
+    opacity: .5;
+    scale: 2;
+    color: var(--md-sys-color-on-tertiary-container);
+}
+
+.outlined-button:focus {
+    border: 2px solid transparent;
+    opacity: 1;
+    box-shadow: 0px 0px 0px 4px var(--md-sys-color-on-tertiary-container);
+}
+
+.container {
+    margin-top: 84px;
+    height: 200%;
 }
