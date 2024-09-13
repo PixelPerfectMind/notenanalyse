@@ -24,7 +24,7 @@ def login_user(request):
             login(request, user)
             return redirect(reverse('account:index'))
 
-    return render(request, 'account/login.html', {'L_Form': L_Form})
+    return render(request, 'account/../templates/notenanalyse/login.html', {'L_Form': L_Form})
 
 def logout_user(request):
     logout(request)
@@ -47,4 +47,4 @@ def register_user(request):
                 login(request, user)
                 return redirect(reverse('account:index'))
 
-    return render(request, 'account/register.html', {'R_Form': R_Form})
+    return render(request, 'account/../templates/notenanalyse/register.html', {'R_Form': R_Form})

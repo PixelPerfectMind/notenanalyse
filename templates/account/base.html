@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-
+    <a href="{% url 'account:login' %}">Login</a>
+    <a href="{% url 'account:register' %}">Register</a>
+    {% block authForm %}
+    {% endblock %}
 </body>
 </html>
