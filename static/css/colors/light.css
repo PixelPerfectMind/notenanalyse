@@ -1,5 +1,6 @@
 :root {
   --md-sys-color-primary: rgb(84 90 146);
+  --md-sys-color-primary-transparent: rgba(84, 90, 146, .85);
   --md-sys-color-surface-tint: rgb(84 90 146);
   --md-sys-color-on-primary: rgb(255 255 255);
   --md-sys-color-primary-container: rgb(223 224 255);

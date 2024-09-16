@@ -1,4 +1,6 @@
 @import "colors/light.css";
+@import "colors/dark.css";
+
 @import "./inline.css";
 
 @font-face {
@@ -10,6 +12,11 @@
 @font-face {
     font-family: "Outfit", sans-serif;
     src: url('../fonts/Outfit.ttf');
+}
+
+html {
+    height: 100%;
+    background: black;
 }
 
 body {
@@ -26,13 +33,24 @@ h1 {
     color: var(--md-sys-color-on-background);
     padding: 0;
     margin: 0;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.2rem;
+}
+
+h3 {
+    font-family: "Outfit", sans-serif;
+    font-size: 2rem;
+    color: var(--md-sys-color-on-background);
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
 }
 
 .navbar {
-    background-color: var(--md-sys-color-primary);
+    background-color: var(--md-sys-color-primary-transparent);
     color: var(--md-sys-color-on-primary);
     height: 72px;
+    backdrop-filter: blur(1rem) contrast(2);
+    z-index: 100;
 }
 
 .button {
@@ -44,12 +62,14 @@ h1 {
     font-size: 24px;
     opacity: .85;
     scale: 1;
+    display: flex;
+    min-width: 10rem;
     transition-duration: .2s;
 }
 
 .button:hover {
     opacity: .5;
-    scale: 2;
+    scale: 1.025;
     color: var(--md-sys-color-tertiary-container);
 }
 
@@ -67,13 +87,15 @@ h1 {
     padding: 4px 8px;
     font-size: 24px;
     opacity: .85;
+    display: flex;
+    min-width: 10rem;
     scale: 1;
     transition-duration: .2s;
 }
 
 .outlined-button:hover {
     opacity: .5;
-    scale: 2;
+    scale: 1.025;
     color: var(--md-sys-color-on-tertiary-container);
 }
 

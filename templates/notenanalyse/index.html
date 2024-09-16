@@ -1,9 +1,46 @@
 {% extends 'notenanalyse/base.html' %}
 
-<div style="background: var(--md-sys-color-secondary); color: var(--md-sys-color-on-secondary)">
+{% block index %}
+<div style="height: 85%; background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); margin-top: -12px">
     <div class="container">
-        <h1>
-            Schulnotenanalyseへようこそ！
+        <h1 class="pt-4" style="color: var(--md-sys-color-on-primary)">
+            Schulnotenanalyse
         </h1>
+        <h3 style="color: var(--md-sys-color-on-primary)">
+            Dein Tool zum Verwalten deiner Klausurenergebnisse.
+        </h3>
+        <div>
+            <div>
+                <a href="#" style="width: 25rem" class="button">🚀 Jetzt durchstarten!</a>
+            </div>
+            <div class="mt-2 pb-4">
+                <a href="#" style="width: 25rem" class="outlined-button">🧑‍💻 Ich habe schon einen Account</a>
+            </div>
+            <div class="mt-4"></div>
+        </div>
     </div>
 </div>
+
+<div class="container mb-4">
+    <div class="flex flex-wrap space-between align-center">
+        <img style="background: url('../../static/images/pexels-anastasiya-gepp-654466-1462630.jpg') center;height: 25rem; background-size: cover; width: 25rem; border-radius: 12.5rem">
+        <div style="width: calc(95% - 25rem)">
+            <h3>Deine Klausueren, dein Durchschnitt</h3>
+            <p>Verwende die Schulnotenanalyse für die Ausrechnung deines Notenschnitts - auch für jedes einzenlnde Fach.</p>
+            <p>Analysiere deine Top-3- und Flop-3-Fächer, damit du genau weißt, wofür du noch lernen musst! Mit der Schulnotenanalyse behälst du immer den Überblick über deine Fächer!</p>
+        </div>
+    </div>
+</div>
+
+<div style="background: var(--md-sys-color-secondary);">
+    <div class="container pb-8 pt-8">
+    <div class="flex flex-wrap space-between align-center pt-8 pb-8">
+        <div style="width: calc(95% - 25rem)">
+            <h3 style="color: var(--md-sys-color-on-secondary)">Übersichtlich und strukturiert</h3>
+            <p style="color: var(--md-sys-color-on-secondary)">Schüler lieben es, die Schulnotenanalyse zu verwenden, da die Benutzeroberfläche, einfach, einheitlich und klar strukturiert gestaltet ist.</p>
+            <p style="color: var(--md-sys-color-on-secondary)">Mithilfe des selbsterklärendem Dashboards lassen sich die relevantesten Informationen sofort einsehen.</p>
+        </div>
+        <img style="background: url('../../static/images/pexels-buro-millennial-636760-1438081.jpg') center;height: 25rem; background-size: cover; width: 25rem; border-radius: 12.55rem">
+    </div>
+</div>
+{%  endblock %}

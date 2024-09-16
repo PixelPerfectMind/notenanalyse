@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="light">
     <head>
         <meta charset="UTF-8">
         <title>Notenanalyse - Hallo!</title>
@@ -11,8 +11,9 @@
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/page.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/colors/light.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body id="body">
         <nav class="navbar-expand-lg navbar always-on-top w-full">
             <div class="container-fluid">
                 <div class="w-full flex flex-wrap align-center space-between">
@@ -23,20 +24,25 @@
                     <!-- User account controls -->
                     <div>
                         <!-- if user is logged in -->
-                        <a href="#" class="outlined-button mr-4">Mein Account</a>
-                        <a href="#" class="button mr-4">Abmelden</a>
+                        <a href="#" style="display: inline" class="outlined-button mr-4">Mein Account</a>
+                        <a href="#" style="display: inline" class="button mr-4">Abmelden</a>
                         
                         <!-- if user is not logged in -->
-                        <a href="#" class="outlined-button mr-4">Anmelden</a>
-                        <a href="#" class="button mr-4">Registrieren</a>
+                        <a href="#" style="display: inline" class="outlined-button mr-4">Anmelden</a>
+                        <a href="#" style="display: inline" class="button mr-4">Registrieren</a>
                     </div>
                 </div>
             </div>
         </nav>
 
-        <div class="container">
-          {% block content %}
-          {% endblock %}
+        {% block index %}
+        {% endblock %}
+
+        <div style="background: var(--md-sys-color-surface-container)">
+            <button onclick="ToggleDarkMode()">Dark mode</button>
+            <button onclick="ToggleLightMode()">Light mode</button>
         </div>
+    </div>
     </body>
 </html>
+<script src="{% static 'scripts/ColorMode.js' %}"></script>
