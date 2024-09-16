@@ -1,5 +1,9 @@
 @import "colors/light.css";
+@import "colors/light-hc.css";
+@import "colors/light-mc.css";
 @import "colors/dark.css";
+@import "colors/dark-hc.css";
+@import "colors/dark-mc.css";
 
 @import "./inline.css";
 
@@ -62,9 +66,10 @@ h3 {
     font-size: 24px;
     opacity: .85;
     scale: 1;
-    display: flex;
+    display: inline-block;
+    text-align: center;
     min-width: 10rem;
-    transition-duration: .2s;
+    transition-duration: .1s;
 }
 
 .button:hover {
@@ -87,10 +92,11 @@ h3 {
     padding: 4px 8px;
     font-size: 24px;
     opacity: .85;
-    display: flex;
+    display: inline-block;
+    text-align: center;
     min-width: 10rem;
     scale: 1;
-    transition-duration: .2s;
+    transition-duration: .1s;
 }
 
 .outlined-button:hover {

@@ -24,12 +24,12 @@
                     <!-- User account controls -->
                     <div>
                         <!-- if user is logged in -->
-                        <a href="#" style="display: inline" class="outlined-button mr-4">Mein Account</a>
-                        <a href="#" style="display: inline" class="button mr-4">Abmelden</a>
+                        <a href="#" class="outlined-button mr-4">Mein Account</a>
+                        <a href="#" class="button mr-4">Abmelden</a>
                         
                         <!-- if user is not logged in -->
-                        <a href="#" style="display: inline" class="outlined-button mr-4">Anmelden</a>
-                        <a href="#" style="display: inline" class="button mr-4">Registrieren</a>
+                        <a href="#" class="outlined-button mr-4">Anmelden</a>
+                        <a href="#" class="button mr-4">Registrieren</a>
                     </div>
                 </div>
             </div>
@@ -38,9 +38,16 @@
         {% block index %}
         {% endblock %}
 
-        <div style="background: var(--md-sys-color-surface-container)">
-            <button onclick="ToggleDarkMode()">Dark mode</button>
-            <button onclick="ToggleLightMode()">Light mode</button>
+        <div style="background: var(--md-sys-color-tertiary-container)">
+            <div class="container pt-8 pb-8">
+                <button id="DarkModeButton" class="button" onclick="ToggleDarkMode()">Dark mode</button>
+                <button id="LightModeButton" class="button" onclick="ToggleLightMode()">Light mode</button>
+            </div>
+            <div class="container pt-8 pb-8">
+                <button id="DefaultContrastButton" class="button" onclick="ToggleDefaultContrast()">Default contrast</button>
+                <button id="MediumContrastButton" class="button" onclick="ToggleMediumContrast()">Medium contrast</button>
+                <button id="HighContrastButton" class="button" onclick="ToggleHighContrast()">High contrast</button>
+            </div>
         </div>
     </div>
     </body>
