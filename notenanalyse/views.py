@@ -22,7 +22,7 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            return redirect(reverse('notenanalyse:index'))
+            return redirect(reverse('dashboard'))
 
     return render(request, 'notenanalyse/login.html', {'L_Form': L_Form})
 
@@ -45,6 +45,13 @@ def register_user(request):
             user = authenticate(request, username=name, password=password)
             if user:
                 login(request, user)
-                return redirect(reverse('notenanalyse:index'))
+                return redirect(reverse('notenanalyse:dashboard'))
 
     return render(request, 'notenanalyse/register.html', {'R_Form': R_Form})
+
+
+def dashboard(request):
+    if request.user:
+        if request.user.is_authenticated: return render(request, './notenanalyse/dashboard.html', {'user': request.user})
+        else: return redirect('login')
+    return redirect('login')

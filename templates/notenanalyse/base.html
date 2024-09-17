@@ -25,7 +25,7 @@
                     <div>
                         {% if user.is_authenticated %}
                             <!-- if user is logged in -->
-                            <a href="#" class="outlined-button mr-4">Mein Account</a>
+                            <a href="{% url 'dashboard' %}" class="outlined-button mr-4">Mein Account</a>
                             <a href="{% url 'logout' %}" class="button mr-4">Abmelden</a>
                         {% else %}
                             <!-- if user is not logged in -->
@@ -39,6 +39,12 @@
 
         {% block index %}
         {% endblock %}
+
+        <div class="container pt-8">
+            <!-- Dashboard -->
+            {% block dashboard %}
+            {% endblock %}
+        </div>
 
         <div style="background: var(--md-sys-color-tertiary-container)">
             <div class="container pt-8 pb-8">

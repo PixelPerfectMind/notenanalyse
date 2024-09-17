@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="light">
+<html lang="de">
     <head>
         <meta charset="UTF-8">
         <title>Notenanalyse - Hallo!</title>
@@ -37,12 +37,10 @@
             </div>
         </nav>
 
-    <a href="{% url 'account:login' %}">Login</a>
-    <a href="{% url 'account:register' %}">Register</a>
-    {% block authForm %}
-    {% endblock %}
-    
-    </body>
+    <div class="container pb-8 pt-8">
+        {% block authForm %}
+        {% endblock %}
+    </div>
 
         <div style="background: var(--md-sys-color-tertiary-container)">
             <div class="container pt-8 pb-8">
@@ -55,5 +53,6 @@
                 <button id="HighContrastButton" class="button" onclick="ToggleHighContrast()">High contrast</button>
             </div>
         </div>
+    </body>
 </html>
 <script src="{% static 'scripts/ColorMode.js' %}"></script>

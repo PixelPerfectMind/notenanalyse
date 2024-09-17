@@ -1,9 +1,13 @@
 {% extends 'account/base.html' %}
 
 {% block authForm %}
+    <h1>Registrieren</h1>
+    <h3>Wähle deine Anmeldedaten, mit denne du dich hier anmelden kannst!</h3>
+
     <form method="post" action="">
-    {% csrf_token %}
+        {% csrf_token %}
         {{ R_Form.as_p }}
-    <button type="submit">Registrieren</button>
+        <button type="submit">Registrieren</button>
     </form>
+    <a href="{% url 'login' %}" class="outlined-button" style="margin-left: 2px; margin-top: 1rem">Ich habe schon einen Account!</a>
 {% endblock authForm %}
