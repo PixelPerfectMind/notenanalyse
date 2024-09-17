@@ -23,13 +23,15 @@
 
                     <!-- User account controls -->
                     <div>
-                        <!-- if user is logged in -->
-                        <a href="#" class="outlined-button mr-4">Mein Account</a>
-                        <a href="#" class="button mr-4">Abmelden</a>
-                        
-                        <!-- if user is not logged in -->
-                        <a href="#" class="outlined-button mr-4">Anmelden</a>
-                        <a href="#" class="button mr-4">Registrieren</a>
+                        {% if user.is_authenticated %}
+                            <!-- if user is logged in -->
+                            <a href="#" class="outlined-button mr-4">Mein Account</a>
+                            <a href="{% url 'logout' %}" class="button mr-4">Abmelden</a>
+                        {% else %}
+                            <!-- if user is not logged in -->
+                            <a href="{% url 'login' %}" class="outlined-button mr-4">Anmelden</a>
+                            <a href="{% url 'register' %}" class="button mr-4">Registrieren</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -49,7 +51,6 @@
                 <button id="HighContrastButton" class="button" onclick="ToggleHighContrast()">High contrast</button>
             </div>
         </div>
-    </div>
     </body>
 </html>
 <script src="{% static 'scripts/ColorMode.js' %}"></script>

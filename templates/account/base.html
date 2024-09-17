@@ -1,13 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="de" class="light">
+    <head>
+        <meta charset="UTF-8">
+        <title>Notenanalyse - Hallo!</title>
+
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/page.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/colors/light.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body id="body">
+        <nav class="navbar-expand-lg navbar always-on-top w-full">
+            <div class="container-fluid">
+                <div class="w-full flex flex-wrap align-center space-between">
+                    <a class="navbar-brand" href="#">
+                        <img src="../../static/images/logo.png" alt="Notenanalyse" height="48px" />
+                    </a>
+
+                    <!-- User account controls -->
+                    <div>
+                        {% if user.is_authenticated %}
+                            <!-- if user is logged in -->
+                            <a href="#" class="outlined-button mr-4">Mein Account</a>
+                            <a href="{% url 'logout' %}" class="button mr-4">Abmelden</a>
+                        {% else %}
+                            <!-- if user is not logged in -->
+                            <a href="{% url 'login' %}" class="outlined-button mr-4">Anmelden</a>
+                            <a href="{% url 'register' %}" class="button mr-4">Registrieren</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+
     <a href="{% url 'account:login' %}">Login</a>
     <a href="{% url 'account:register' %}">Register</a>
     {% block authForm %}
     {% endblock %}
-</body>
+    
+    </body>
+
+        <div style="background: var(--md-sys-color-tertiary-container)">
+            <div class="container pt-8 pb-8">
+                <button id="DarkModeButton" class="button" onclick="ToggleDarkMode()">Dark mode</button>
+                <button id="LightModeButton" class="button" onclick="ToggleLightMode()">Light mode</button>
+            </div>
+            <div class="container pt-8 pb-8">
+                <button id="DefaultContrastButton" class="button" onclick="ToggleDefaultContrast()">Default contrast</button>
+                <button id="MediumContrastButton" class="button" onclick="ToggleMediumContrast()">Medium contrast</button>
+                <button id="HighContrastButton" class="button" onclick="ToggleHighContrast()">High contrast</button>
+            </div>
+        </div>
 </html>
+<script src="{% static 'scripts/ColorMode.js' %}"></script>
