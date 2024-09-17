@@ -2,7 +2,70 @@
 
 {% block dashboard %}
 
-        <h1>Hallo {{ user.name }}!</h1>
-        <h3>Melde dich an, damit du deinen Account nutzen kannst!</h3>
+    <div class="flex flex-wrap space-between">
+        <!-- Hello user! -->
+        <div class="w-75">
+            {% if user.first_name %}
+                <h1>Hallo {{ user.first_name }}!</h1>
+            {% else %}
+                <h1>Hallo {{ user.username }}!</h1>
+            {% endif %}
+            <h3>Deine Durchschnittsnote beträgt 1 (wip).</h3>
+
+            <div class="flex flex-wrap align-center gap-4">
+                <a href="{% url 'index' %}" class="outlined-button">
+                    <div>
+                        <div class="mt-4">
+                            <img src="../../static/images/ic_blackboard_64px.png" alt="Blackboard" height="64" />
+                        </div>
+                        <div class="mb-4">
+                            <b>Deine Fächer</b>
+                        </div>
+                    </div>
+                </a>
+                <a href="{% url 'index' %}" class="outlined-button">
+                    <div>
+                        <div class="mt-4">
+                            <img src="../../static/images/ic_homework_64px.png" alt="School book" height="64" />
+                        </div>
+                        <div class="mb-4">
+                            <b>Deine Noten</b>
+                        </div>
+                    </div>
+                </a>
+                <a href="{% url 'index' %}" class="outlined-button">
+                    <div>
+                        <div class="mt-4">
+                            <img src="../../static/images/ic_bar-chart_64px.png" alt="Bar chart" height="64" />
+                        </div>
+                        <div class="mb-4">
+                            <b>Analysieren</b>
+                        </div>
+                    </div>
+                </a>
+                <a href="{% url 'index' %}" class="outlined-button">
+                    <div>
+                        <div class="mt-4">
+                            <img src="../../static/images/ic_user_64px.png" alt="Account" height="64" />
+                        </div>
+                        <div class="mb-4">
+                            <b>Dein Konto</b>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    <!-- Charts -->
+    <div class="w-25">
+        <div>
+            <h3>Deine Flop-3-Fächer</h3>
+            <p>Gib' nicht auf! Lern' weiter, dann schaffst du bessere Noten!</p>
+        </div>
+        <div class="mt-4">
+            <h3>Deine Top-3-Fächer</h3>
+        </div>
+    </div>
+    </div>
 
 {% endblock dashboard %}

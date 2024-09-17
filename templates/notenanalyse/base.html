@@ -25,12 +25,24 @@
                     <div>
                         {% if user.is_authenticated %}
                             <!-- if user is logged in -->
-                            <a href="{% url 'dashboard' %}" class="outlined-button mr-4">Mein Account</a>
-                            <a href="{% url 'logout' %}" class="button mr-4">Abmelden</a>
+                            <a href="{% url 'dashboard' %}" class="outlined-button mr-4">
+                                <img src="../../static/images/ic_person_24dp.svg" class="desktop-hidden" />
+                                <span class="mobile-hidden">Mein Account</span>
+                            </a>
+                            <a href="{% url 'logout' %}" class="button mr-4">
+                                <img src="../../static/images/ic_logout_24dp.svg" class="desktop-hidden" />
+                                <span class="mobile-hidden">Abmelden</span>
+                            </a>
                         {% else %}
                             <!-- if user is not logged in -->
-                            <a href="{% url 'login' %}" class="outlined-button mr-4">Anmelden</a>
-                            <a href="{% url 'register' %}" class="button mr-4">Registrieren</a>
+                            <a href="{% url 'login' %}" class="button mr-4">
+                                <img src="../../static/images/ic_login_24dp.svg" class="desktop-hidden" />
+                                <span class="mobile-hidden">Anmelden</span>
+                            </a>
+                            <a href="{% url 'register' %}" class="button mr-4">
+                                <img src="../../static/images/ic_person_add_24dp.svg" class="desktop-hidden" />
+                                <span class="mobile-hidden">Registrieren</span>
+                            </a>
                         {% endif %}
                     </div>
                 </div>

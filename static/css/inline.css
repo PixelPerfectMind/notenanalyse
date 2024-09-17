@@ -50,6 +50,10 @@
     margin-bottom: .4rem;
 }
 
+.gap {
+    flex-grow: 1;
+}
+
 .always-on-top {
     top: 0;
     position: fixed;

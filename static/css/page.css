@@ -122,3 +122,15 @@ input {
     border: 0;
     border-bottom: 3px solid var(--md-sys-color-on-tertiary-container);
 }
+
+/* Show or hide elements */
+
+.mobile-hidden { display: none; }
+.desktop-hidden { display: inline-block; }
+
+@media screen and (min-width: 768px) {
+    .mobile-hidden { display: inline-block; }
+    .desktop-hidden { display: none; }
+    .button, button { min-width: 3rem }
+    .outlined-button { min-width: 3rem }
+}
