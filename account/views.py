@@ -1,14 +1,14 @@
+from audioop import reverse
+
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import authenticate, login, logout, user_login_failed
 from django.urls import reverse
-
-
 # Create your views here.
 
 def index(request):
-    return render(request, 'notenanalyse/index.html')
+    return render(request, 'account/base.html')
+
 
 def login_user(request):
     L_Form = AuthenticationForm()
@@ -22,9 +22,9 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            return redirect(reverse('notenanalyse:index'))
+            return redirect(reverse('account:index'))
 
-    return render(request, 'notenanalyse/login.html', {'L_Form': L_Form})
+    return render(request, 'account/../templates/notenanalyse/login.html', {'L_Form': L_Form})
 
 def logout_user(request):
     logout(request)
@@ -45,6 +45,6 @@ def register_user(request):
             user = authenticate(request, username=name, password=password)
             if user:
                 login(request, user)
-                return redirect(reverse('notenanalyse:index'))
+                return redirect(reverse('account:index'))
 
-    return render(request, 'notenanalyse/register.html', {'R_Form': R_Form})
+    return render(request, 'account/../templates/notenanalyse/register.html', {'R_Form': R_Form})

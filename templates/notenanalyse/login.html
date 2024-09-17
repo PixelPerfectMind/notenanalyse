@@ -1,0 +1,9 @@
+{% extends 'account/base.html' %}
+
+{% block authForm %}
+    <form method="post" action="">
+    {% csrf_token %}
+        {{ L_Form.as_p }}
+    <button type="submit">Login</button>
+    </form>
+{% endblock authForm %}
