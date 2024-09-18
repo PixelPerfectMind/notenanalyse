@@ -49,7 +49,6 @@ def register_user(request):
 
     return render(request, 'notenanalyse/register.html', {'R_Form': R_Form})
 
-
 def dashboard(request):
     if request.user:
         if request.user.is_authenticated: return render(request, './notenanalyse/dashboard.html', {'user': request.user})

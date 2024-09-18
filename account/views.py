@@ -1,7 +1,7 @@
 from audioop import reverse
 
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
 from django.contrib.auth import authenticate, login, logout, user_login_failed
 from django.urls import reverse
 # Create your views here.
@@ -48,3 +48,16 @@ def register_user(request):
                 return redirect(reverse('account:index'))
 
     return render(request, 'account/../templates/notenanalyse/register.html', {'R_Form': R_Form})
+
+def me(request):
+    if request.user:
+        if request.user.is_authenticated: # Check, if user is authenticated
+
+            if request.method == 'POST':
+                update_form = UserChangeForm(request.POST)
+                if update_form.is_valid():
+                    update_form.save()
+
+            return render(request, './account/my-account.html', {'update_form': update_form})
+        else: return redirect('login')
+    return redirect('login')
