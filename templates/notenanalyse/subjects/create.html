@@ -1,0 +1,22 @@
+{% extends 'notenanalyse/base.html' %}
+
+{% block subjects_create %}
+    
+    <h1>Fach hinzufügen</h1>
+    <h3>Lege ein neues Schulfach in die Liste an!</h3>
+    
+    
+    <form method="post" action="#" class="mt-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="mt-4 mb-4">
+            <b>Nichts passendes dabei?</b><br>
+            <a href="#">Fach-Vorlage erstellen</a><br>
+            <a href="{%  url 'create_symbol' %}">Icon hinzufügen</a><br>
+            <a href="#">Schuljahr anlegen</a>
+        </div>
+        <button type="submit">Fach hinzufügen</button>
+    </form>
+    
+{% endblock subjects_create %}

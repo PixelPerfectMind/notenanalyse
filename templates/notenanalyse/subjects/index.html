@@ -1,0 +1,14 @@
+{% extends 'notenanalyse/base.html' %}
+
+{% block subjects_index %}
+
+    <div class="flex flex-wrap space-between align-center">
+        <div>
+            <h1>Deine Fächer</h1>
+            <h3>Verwalte oder sehe deine Schulfächer ein!</h3>
+        </div>
+        <a href="{%  url 'create_subject' %}" class="button">Fach hinzufügen</a>
+    </div>
+
+
+{% endblock subjects_index %}

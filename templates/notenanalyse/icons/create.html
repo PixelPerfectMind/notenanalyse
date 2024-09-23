@@ -1,0 +1,15 @@
+{% extends 'notenanalyse/base.html' %}
+
+{% block icons_create %}
+    
+    <h1>Symbol hinzufügen</h1>
+    <h3>Trage ein neues Symbol in die Liste ein!</h3>
+    
+    
+    <form method="post" action="#" class="mt-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Symbol hinzufügen</button>
+    </form>
+    
+{% endblock icons_create %}

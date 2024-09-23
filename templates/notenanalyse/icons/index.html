@@ -1,0 +1,13 @@
+{% extends 'notenanalyse/base.html' %}
+
+{% block icons_index %}
+
+    <div class="flex flex-wrap space-between align-center">
+        <div>
+            <h1>Icons</h1>
+            <h3>Diese Icon-Sammlung kannst du für deine Fächer benutzen!</h3>
+        </div>
+        <a href="{%  url 'create_symbol' %}" class="button">Symbol hinzufügen</a>
+    </div>
+    
+{% endblock icons_index %}

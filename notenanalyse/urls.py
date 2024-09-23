@@ -20,8 +20,24 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # Landing page and dashboard
     path("", views.index, name="index"),
     path("dashboard", views.dashboard, name="dashboard"),
+
+    # Subjects
+    path("subjects", views.subjects, name="subjects"),
+    path("subjects/create", views.create_subject, name="create_subject"),
+    path("subjects/show", views.show_subject, name="show_subject"),
+    path("subjects/delete", views.delete_subjects, name="delete_subject"),
+
+    # Icons
+    path("symbols", views.symbols, name="symbols"),
+    path("symbols/create", views.create_symbol, name="create_symbol"),
+    path("symbols/show", views.create_symbol, name="show_symbol"),
+    path("symbols/delete", views.create_symbol, name="delete_symbol"),
+
+    # Account actions
     path('account/', include('account.urls')),
     path('login/', views.login_user, name='login' ),
     path('register/', views.register_user, name='register' ),
