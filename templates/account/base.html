@@ -46,11 +46,13 @@
     </div>
 
         <div style="background: var(--md-sys-color-tertiary-container)">
-            <div class="container pt-8 pb-8">
+            <div class="container pt-4">
+                <h3>Ansichtsmodus</h3>
                 <button id="DarkModeButton" class="button" onclick="ToggleDarkMode()">Dark mode</button>
                 <button id="LightModeButton" class="button" onclick="ToggleLightMode()">Light mode</button>
             </div>
-            <div class="container pt-8 pb-8">
+            <div class="container pb-4">
+                <h3>Kontrast-Modus</h3>
                 <button id="DefaultContrastButton" class="button" onclick="ToggleDefaultContrast()">Default contrast</button>
                 <button id="MediumContrastButton" class="button" onclick="ToggleMediumContrast()">Medium contrast</button>
                 <button id="HighContrastButton" class="button" onclick="ToggleHighContrast()">High contrast</button>
@@ -58,4 +60,5 @@
         </div>
     </body>
 </html>
+<script src="{% static 'scripts/Cookies.js' %}"></script>
 <script src="{% static 'scripts/ColorMode.js' %}"></script>

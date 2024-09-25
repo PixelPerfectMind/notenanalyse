@@ -70,23 +70,18 @@
             {% endblock %}
         </div>
 
-        <div style="background: var(--md-sys-color-tertiary-container)">
-            <div class="container mt-4">
-                <h3>Farb-Modus</h3>
-                <div>
-                    <button id="DarkModeButton" class="button" onclick="ToggleDarkMode()">Dark mode</button>
-                    <button id="LightModeButton" class="button" onclick="ToggleLightMode()">Light mode</button>
-                </div>
+        <div style="background: var(--md-sys-color-tertiary-container)" class="pb-4 pt-4">
+            <div class="container pt-4">
+                <button id="DarkModeButton" class="button" onclick="ToggleDarkMode()">Dark mode</button>
+                <button id="LightModeButton" class="button" onclick="ToggleLightMode()">Light mode</button>
             </div>
-            <div class="container mt-4 mb-4">
-                <h3>Kontrast</h3>
-                <div>
-                    <button id="DefaultContrastButton" class="button" onclick="ToggleDefaultContrast()">Default contrast</button>
-                    <button id="MediumContrastButton" class="button" onclick="ToggleMediumContrast()">Medium contrast</button>
-                    <button id="HighContrastButton" class="button" onclick="ToggleHighContrast()">High contrast</button>
-                </div>
+            <div class="container pb-4">
+                <button id="DefaultContrastButton" class="button" onclick="ToggleDefaultContrast()">Default contrast</button>
+                <button id="MediumContrastButton" class="button" onclick="ToggleMediumContrast()">Medium contrast</button>
+                <button id="HighContrastButton" class="button" onclick="ToggleHighContrast()">High contrast</button>
             </div>
         </div>
     </body>
 </html>
+<script src="{% static 'scripts/Cookies.js' %}"></script>
 <script src="{% static 'scripts/ColorMode.js' %}"></script>
