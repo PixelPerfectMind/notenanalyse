@@ -45,7 +45,7 @@ def register_user(request):
             user = authenticate(request, username=name, password=password)
             if user:
                 login(request, user)
-                return redirect(reverse('account:index'))
+                return redirect(reverse('notenanalyse:dashboard'))
 
     return render(request, 'account/../templates/notenanalyse/register.html', {'R_Form': R_Form})
 
