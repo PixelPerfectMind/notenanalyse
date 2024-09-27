@@ -7,15 +7,18 @@
 
 @import "./inline.css";
 
+/* Encode Sans font is used for text */
 @font-face {
     font-family: "Encode Sans", sans-serif;
-    src: url('../fonts/EncodeSans.ttf');
+    src: url('../fonts/EncodeSans.ttf') format('truetype'),
+         url('../fonts/EncodeSans.woff') format('woff');
 }
 
 /* Outfit font is used for titles */
 @font-face {
     font-family: "Outfit", sans-serif;
-    src: url('../fonts/Outfit.ttf');
+    src: url('../fonts/Outfit.ttf') format('truetype'),
+         url('../fonts/Outfit.woff') format('woff');
 }
 
 html {
